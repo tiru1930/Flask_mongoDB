@@ -1,0 +1,56 @@
+{% extends "index.html" %}
+{% block title %}User Registeration{% endblock %}
+
+{% block content %}
+    <div class="large-8 columns" >
+    <h2>User Register</h2>
+    <form action="/add_contact" method="POST">
+    
+        <!--First Name-->
+        <div class="row collapse">
+            <div class="small-3 large-2 columns">
+              <span class="prefix">User Name</span>
+            </div>
+            <div class="small-9 large-10 columns">
+              <input type="text" name="UserName" placeholder="Enter User Name..." maxlength=100 required>
+            </div>
+        </div>
+
+        <!--Last Name-->
+        <div class="row collapse">
+            <div class="small-3 large-2 columns">
+              <span class="prefix">Full Name</span>
+            </div>
+            <div class="small-9 large-10 columns">
+              <input type="text" name="FullName" placeholder="Enter Full Name..." maxlength=100 required>
+            </div>
+        </div>
+
+        <!--Email Address-->
+        <div class="row collapse">
+            <div class="small-3 large-2 columns">
+              <span class="prefix">Email Address</span>
+            </div>
+            <div class="small-9 large-10 columns">
+              <input type="email" name="Email" placeholder="Enter Email Address..." maxlength=100 required>
+            </div>
+        </div>
+        
+         <!--Last Name-->
+        <div class="row collapse">
+            <div class="small-3 large-2 columns">
+              <span class="prefix">Full Name</span>
+            </div>
+            <div class="small-9 large-10 columns">
+              <input type="text" name="PassWord" placeholder="Enter Password..." maxlength=100 required>
+            </div>
+        </div>
+        
+        <input type="submit" class="round button"/>
+       
+    </form>
+</div>
+ {% for message in get_flashed_messages() %}
+       <p class="login_message"> {{ message }} </p>
+    {% endfor %}
+{% endblock %}
